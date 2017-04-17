@@ -1,4 +1,4 @@
-package com.phoenix.service;
+package com.phoenix.service.startsevice;
 
 import android.app.IntentService;
 import android.app.Notification;
@@ -6,10 +6,9 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.Context;
-import android.os.Handler;
 import android.support.v4.app.TaskStackBuilder;
-import android.util.Log;
-import android.widget.Toast;
+
+import com.phoenix.service.R;
 
 /**
  * An {@link IntentService} subclass for handling asynchronous task requests in
@@ -46,10 +45,10 @@ public class DelayedMessageService extends IntentService {
 //            }
 //        });
 
-        Intent intent = new Intent(this, Main2Activity.class);
+        Intent intent = new Intent(this, DummyDetailActivity.class);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
 
-        stackBuilder.addParentStack(Main2Activity.class);
+        stackBuilder.addParentStack(DummyDetailActivity.class);
         stackBuilder.addNextIntent(intent);
 //        stackBuilder.addNextIntentWithParentStack(intent);
         PendingIntent pendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_ONE_SHOT);
