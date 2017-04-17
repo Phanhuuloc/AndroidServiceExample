@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".startsevice.StartServiceActivity">
+
+        <service
+            android:name=".startsevice.DelayedMessageService"
+            android:exported="false" />
+
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,14 +22,17 @@
             </intent-filter>
         </activity>
 
-        <service
-            android:name=".startsevice.DelayedMessageService"
-            android:exported="false" />
+        <activity android:name=".startsevice.StartServiceActivity"
+            android:label="@string/start_service"
+            android:parentActivityName=".MainActivity" />
 
         <activity
             android:name=".startsevice.DummyDetailActivity"
-            android:parentActivityName=".startsevice.StartServiceActivity"></activity>
-        <activity android:name=".bindservice.BindServiceActivity"></activity>
+            android:parentActivityName=".startsevice.StartServiceActivity" />
+
+        <activity android:name=".bindservice.BindServiceActivity"
+            android:label="@string/bind_service"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>
